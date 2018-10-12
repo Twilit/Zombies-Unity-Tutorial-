@@ -34,9 +34,17 @@ public class Health : MonoBehaviour
             if (gameObject.tag != "Player")
             {
                 UIScript.updateScore(30);
-            }
 
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }
+            else
+            {
+                currentHealth = 0;
+                gameObject.GetComponent<LookX>().enabled = false;
+                gameObject.GetComponent<ShootingScript>().enabled = false;
+                gameObject.GetComponent<InteractionScript>().enabled = false;
+                gameObject.transform.GetChild(0).GetComponent<LookY>().enabled = false;
+            }
         }
         else if (currentHealth > maximumHealth)
         {
