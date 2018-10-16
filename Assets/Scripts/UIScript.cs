@@ -43,6 +43,7 @@ public class UIScript : MonoBehaviour {
 
         if (healthScript.IsDead)
         {
+            
             losePanel.SetActive(true);
             Time.timeScale = 0;
         }
